@@ -1,13 +1,35 @@
 <script setup>
+import { ref } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
 import { RouterLink, RouterView } from 'vue-router'
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
+
+// Set to false when you are ready to launch!
+const isUnderConstruction = ref(true)
 </script>
 
 <template>
-  <div class="flex min-h-screen text-slate-800 dark:text-slate-200 bg-white dark:bg-dark-bg">
+  <!-- Under Construction Screen -->
+  <div v-if="isUnderConstruction" class="flex min-h-screen w-full items-center justify-center bg-white dark:bg-dark-bg p-6 text-slate-800 dark:text-slate-200">
+    <div class="text-center max-w-2xl flex flex-col items-center">
+      <img src="./assets/logos/newlogo.png" alt="Today's Software Developer Logo" class="mx-auto mb-8 h-40 w-auto mix-blend-multiply dark:invert dark:mix-blend-screen" />
+      <h1 class="mb-4 text-4xl font-bold tracking-tight md:text-5xl">Site Under Construction</h1>
+      <p class="mb-8 text-lg text-slate-600 dark:text-slate-400">
+        We are building the definitive home for <strong>Today's Software Developer</strong>. 
+        Stay tuned for the book, articles, and companion resources.
+      </p>
+      <a href="https://www.youtube.com/@TodaysSoftwareDev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-lg bg-red-600 px-6 py-3 font-bold text-white shadow-sm transition hover:bg-red-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+          <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+        </svg>
+        Subscribe on YouTube
+      </a>
+    </div>
+  </div>
+
+  <div v-else class="flex min-h-screen text-slate-800 dark:text-slate-200 bg-white dark:bg-dark-bg">
     <!-- Fixed Side Navigation -->
     <aside class="hidden md:flex fixed top-0 left-0 h-screen w-72 border-r border-slate-200/70 bg-slate-50/50 dark:border-slate-700/80 dark:bg-slate-900/50 flex-col pt-8 pb-6 px-6 overflow-y-auto z-50">
       <!-- Logo -->
