@@ -1,8 +1,8 @@
 <template>
   <section class="rounded-lg bg-slate-100 dark:bg-dark-card p-8 md:p-10">
     <div class="flex flex-col items-center gap-8 md:flex-row md:items-start">
-      <div class="flex h-36 w-36 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg">
-        <span class="text-4xl font-bold text-white">JL</span>
+      <div class="flex h-36 w-36 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg overflow-hidden">
+        <img src="../assets/images/me_logo.jpg" alt="Jeremy Lankford" class="h-full w-full object-cover" />
       </div>
 
       <div class="flex-1 text-center md:text-left">
