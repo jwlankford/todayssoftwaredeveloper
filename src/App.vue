@@ -9,7 +9,7 @@ const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
 // Set to false when you are ready to launch!
-const isUnderConstruction = ref(false)
+const isUnderConstruction = ref(true)
 const showSignIn = ref(false)
 const currentUser = ref(null)
 const isMobileMenuOpen = ref(false)
@@ -236,6 +236,9 @@ onMounted(async () => {
           <!-- Sign In Popup Menu -->
           <div v-if="showSignIn && currentUser" class="absolute bottom-[110%] right-0 w-60 transform origin-bottom-right bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-4 z-50 flex flex-col gap-3 mb-2">
             <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700 pb-2">Welcome, {{ currentUser.name || currentUser.username }}</h4>
+            <a href="https://portal.azure.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-full px-3 py-1 text-sm font-medium rounded-md bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 text-blue-600 dark:text-blue-400 transition-colors border border-blue-200 dark:border-blue-800">
+              Azure Portal
+            </a>
             <button @click="handleSignOut" class="flex items-center justify-center w-full px-3 py-1 text-sm font-medium rounded-md bg-red-50 hover:bg-red-100 dark:bg-red-900/30 dark:hover:bg-red-900/50 text-red-600 dark:text-red-400 transition-colors border border-red-200 dark:border-red-800">
               Sign Out
             </button>
