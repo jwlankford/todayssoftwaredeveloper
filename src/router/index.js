@@ -4,6 +4,7 @@ import AIToolsView from '../views/AIToolsView.vue'
 import ArticlesView from '../views/ArticlesView.vue'
 import AdminArticleView from '../views/AdminArticleView.vue'
 import ArticleDetailView from '../views/ArticleDetailView.vue'
+import ResumeView from '../views/ResumeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,6 +40,11 @@ const router = createRouter({
       path: '/articles/:id',
       name: 'article-detail',
       component: ArticleDetailView
+    },
+    {
+      path: '/resume',
+      name: 'resume',
+      component: ResumeView
     },
     {
       path: '/admin',
