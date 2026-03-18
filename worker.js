@@ -126,8 +126,20 @@ CRITICAL: The very first line of your output MUST be an <h1> tag containing your
          });
       }
 
-      // 404 for any other route
-      return new Response('Not Found', { status: 404, headers: corsHeaders });
+      // Handle API 404s
+      if (url.pathname.startsWith('/api/')) {
+        return new Response('API Route Not Found', { status: 404, headers: corsHeaders });
+      }
+
+      // Serve static assets via env.ASSETS
+      // Try fetching the actual file
+      const assetResponse = await env.ASSETS.fetch(request);
+      
+      // If it's a SPA route (not a file like .css) and resulted in a 404, fallback to index.html
+      if (assetResponse.status === 404 && request.method === 'GET' && !url.pathname.includes('.')) {
+         return env.ASSETS.fetch(new Request(new URL('/', request.url)));
+      }
+      return assetResponse;
       
     } catch (error) {
       return new Response(JSON.stringify({ error: error.message }), {

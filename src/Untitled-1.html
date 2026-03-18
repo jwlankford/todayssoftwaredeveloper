@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise IT Methodologies</title>
+</head>
+<body>
+    <main>
+        <p>Hi Katie,</p>
+        
+        <p>You brought up a fantastic point: IT managers should not view any single methodology as a silver bullet, and the hard decisions come in selecting which constraint is the highest priority for the initiative at hand. This sentiment reflects a struggle many in enterprise IT face: supporting active applications that require different methodologies simultaneously.</p>
+        
+        <p>Building on your statement regarding the project's stability, many enterprise architects will adopt what’s called Gartner’s Pace-Layered Application Strategy. This strategy breaks down enterprise systems into three “paces” or layers, and in my opinion, solves the “which methodology do we use?” question by connecting it to each system’s purpose:</p>
+        
+        <ul>
+            <li><strong>Systems of Record</strong>: The foundational transaction processing systems (i.e., financial ledger). Requirements are incredibly well-defined, and compliance standards are legally enforced. The business demands quality and price. A heavy Waterfall process works best here because any defect is fatal.</li>
+            <li><strong>Systems of Differentiation</strong>: These solutions are special to the industry and confer some level of differentiation. A hybrid is needed: iteration is constant, but the inner layers need to integrate stably.</li>
+            <li><strong>Systems of Innovation</strong>: Newly developed, experimental apps (i.e., deploying a new GenAI app). No one knows the requirements, and time-to-market is king. Pure Agile is necessary because you need a flexible scope as the team discovers what the business needs.</li>
+        </ul>
+
+        <p>Beyond software project management and the methodologies we use, there is also an organizational design element. Pearlson and Saunders (2024) discuss how IT strategy should align with organizational strategy, and vice versa. This relationship is directly affected by what’s known as Conway’s Law, which posits that “organizations will design systems that are a copy of their own communication structures.” In other words, if you have an organization with extremely rigid, siloed departments (Waterfall culture), an IT manager will struggle to lead an Agile project, regardless of the software being produced. The triangle will continue to be broken because the business isn't structured to support changing scope.</p>
+        
+        <p>Given that most sizable organizations must operate all three pace layers at once, I'd like your thoughts on integration. When an Agile team (likely working on a flexible SOI) needs to integrate their shiny new app with the kingdom-owned mainframe maintained by a Waterfall team (an SOR), how should IT leadership navigate the growing pains between those two very different timelines/scopes?</p>
+        
+        <h2>References</h2>
+        <ul>
+            <li>Gartner. (n.d.). Pace-layered application strategy. Gartner Glossary. Gartner Research. Web.</li>
+            <li>Pearlson, K. E., &amp; Saunders, C. S. (2024). Managing and using information systems: A strategic approach (8th ed.). John Wiley &amp; Sons.</li>
+        </ul>
+    </main>
+</body>
+</html>
