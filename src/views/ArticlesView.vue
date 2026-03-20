@@ -164,6 +164,12 @@ const filteredArticles = computed(() => {
                 {{ article.title.replace(/\*\*/g, '').replace(/"/g, '') }}
               </RouterLink>
             </h3>
+            <div class="mt-1 text-xs text-slate-500 flex items-center gap-1.5 font-medium">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <span>By {{ article.author || 'Jeremy Lankford' }}</span>
+            </div>
             <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
               {{ article.content.replace(/<[^>]*>?/gm, '').substring(0, 150) }}...
             </p>

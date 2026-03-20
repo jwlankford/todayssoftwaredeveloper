@@ -7,6 +7,10 @@
   "observability": {
     "enabled": true
   },
+  "routes": [
+    { "pattern": "jeremylankford.com", "custom_domain": true },
+    { "pattern": "www.jeremylankford.com", "custom_domain": true }
+  ],
   "compatibility_flags": [
     "nodejs_compat"
   ],

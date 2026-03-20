@@ -9,7 +9,7 @@ const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
 // Set to false when you are ready to launch!
-const isUnderConstruction = ref(true)
+const isUnderConstruction = ref(false)
 const showSignIn = ref(false)
 const currentUser = ref(null)
 const isMobileMenuOpen = ref(false)
